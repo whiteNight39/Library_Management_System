@@ -12,13 +12,13 @@ public class UserUpdateRequest {
     @NotBlank(message = "User Id is required")
     private String userId;
 
-    @NotBlank(message = "User first name is required")
+//    @NotBlank(message = "User first name is required")
     private String userFirstName;
 
-    @NotBlank(message = "User last name is required")
+//    @NotBlank(message = "User last name is required")
     private String userLastName;
 
     @Email(message = "Invalid email format")
-    @NotBlank(message = "User email is required")
+//    @NotBlank(message = "User email is required")
     private String userEmail;
 }

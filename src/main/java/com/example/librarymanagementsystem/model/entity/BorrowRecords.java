@@ -17,6 +17,8 @@ public class BorrowRecords {
     private LocalDateTime borrowDueDate;
     private String borrowStatus;
     private int borrowDuration;
+    private String borrowPenaltyStage;
+    private int borrowPenalized;
     private LocalDateTime borrowCreatedAt;
     private LocalDateTime borrowUpdatedAt;
 }

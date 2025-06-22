@@ -10,13 +10,14 @@ public class BookQuery {
 
     public static final String UPDATE_BOOK = """
             UPDATE FREDRICK_LIBRARY_BOOKS
-            SET bookTitle       = COALESCE(:bookTitle, bookTitle),
-                bookAuthor      = COALESCE(:bookAuthor, bookAuthor),
-                bookIsbn        = COALESCE(:bookIsbn, bookIsbn),
-                bookGenre       = COALESCE(:bookGenre, bookGenre),
-                bookQuantity    = bookQuantity + COALESCE(:bookQuantity, 0),
-                bookUpdatedAt   = GETDATE()
+            SET bookTitle     = COALESCE(NULLIF(:bookTitle, ''), bookTitle),
+                bookAuthor    = COALESCE(NULLIF(:bookAuthor, ''), bookAuthor),
+                bookIsbn      = COALESCE(NULLIF(:bookIsbn, ''), bookIsbn),
+                bookGenre     = COALESCE(NULLIF(:bookGenre, ''), bookGenre),
+                bookQuantity  = COALESCE(NULLIF(:bookQuantity, ''), bookQuantity),
+                bookUpdatedAt = GETDATE()
             WHERE bookId = :bookId
+                AND bookStatus <> 'DELETED'
             """;
 
     public static final String GET_ALL_BOOKS = """
