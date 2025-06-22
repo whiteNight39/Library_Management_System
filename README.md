@@ -29,7 +29,7 @@ A backend Java-based application for managing library operations such as book bo
 ---
 
 ## Project Structure
-<pre> ```text src/
+<pre>src/
 |----controller/ 	# REST controllers
 |----service/ 		# Business logic layer
 |----repository/ 	# DB interfaces + implementations
@@ -38,7 +38,7 @@ A backend Java-based application for managing library operations such as book bo
 |----model/
 |   |---entity/ 	# Entity classes
 | 	|---requests/ 	# DTOs for incoming API requests
-|----scheduler/ 	# Scheduled jobs (overdue check & penalties)```</pre>
+|----scheduler/ 	# Scheduled jobs (overdue check & penalties)</pre>
  
 ---
 
